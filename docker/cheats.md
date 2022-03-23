@@ -29,4 +29,4 @@
 |Debug docker container| `docker inspect [imageNAME or imageID]`|
 |Check logs| `docker logs ContainerID`|
 |Follow logs| `docker logs -f ContainerID`|
-
+|Check stats| `docker stats`|
