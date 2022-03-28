@@ -30,3 +30,9 @@
 |Check logs| `docker logs ContainerID`|
 |Follow logs| `docker logs -f ContainerID`|
 |Check stats| `docker stats`|
+|remove untagged images | `docker system prune`|
+|remove dangling images | `docker images -f dangling=true` </br> `docker image prune`|
+|remove images according to pattern | `docker images -a | grep "pattern" | awk '{print $3}' | xargs docker rmi` |
+|remove all the images | `docker rmi $(docker images -a -q)`|
+|remove exited containers | `docker rm $(docker ps -a -f status=exited -q)` |
+|remove containers </br> with more than one filter | `docker rm $(docker ps -a -f status=exited -f status=created -q)` |
