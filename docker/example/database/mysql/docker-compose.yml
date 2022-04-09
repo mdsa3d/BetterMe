@@ -1,0 +1,27 @@
+version: '3.8'
+services:
+  db:
+    image: mysql:8.0
+    cap_add:
+      - SYS_NICE
+    restart: always
+    environment:
+      - MYSQL_DATABASE= 'app'
+      - MYSQL_USER= 'user'
+      - MYSQL_PASSWORD= 'pass123'
+      - MYSQL_ROOT_PASSWORD= 'root'
+      # please change variable values
+    ports:
+      - '3306:3306'
+    volumes:
+      - db:/var/lib/mysql
+
+    networks:
+      - customnetwork
+volumes:
+  db:
+    driver: local
+
+networks:
+  customnetwork: 
+    name: sql_network
