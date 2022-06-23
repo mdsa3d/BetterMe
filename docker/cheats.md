@@ -24,6 +24,7 @@
 |Share volumes between containers | `docker run --name ServiceNAME_1 --volumes-from ServiceName_2 -d -p 8000:80 image:version`|
 |Build images | `docker build --tag imageNAME:tagNAME .`|
 |Build image from dockerfile | `docker build --tag imageNAME:tagNAME - < Dockerfile`|
+|Build image without cache <br> (creates a clean build) | `docker build --no-cache -t imageNAME:tagNAME .` |
 |Pull a docker image from dockerhub| `docker pull imageNAME:tagNAME`|
 |Tag own images| `docker tag imageNAME:tagNAME imageNAME:new_tagNAME`|
 |Debug docker container| `docker inspect [imageNAME or imageID]`|
