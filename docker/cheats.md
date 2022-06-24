@@ -32,6 +32,7 @@
 |Follow logs| `docker logs -f ContainerID`|
 |Check stats| `docker stats`|
 |remove untagged images | `docker system prune`|
+|remove images + volumes | `docker system prune --volumes` |
 |remove dangling images | `docker images -f dangling=true` </br> `docker image prune`|
 |remove images according to pattern | `docker images -a | grep "pattern" | awk '{print $3}' | xargs docker rmi` |
 |remove all the images | `docker rmi $(docker images -a -q)`|
